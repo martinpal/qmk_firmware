@@ -31,37 +31,36 @@ static void render_logo(void) {
 
 static void print_status_narrow(void) {
     // Print current mode
-    oled_write_P(PSTR("\n\n"), false);
+    //oled_write_P(PSTR("\n\n"), false);
 
-    switch (get_highest_layer(layer_state)) {
-        case 0:
-            oled_write_ln_P(PSTR("Qwrt"), false);
-            break;
-        case 1:
-            oled_write_ln_P(PSTR("Clmk"), false);
-            break;
-        default:
-            oled_write_P(PSTR("Mod\n"), false);
-            break;
-    }
-    oled_write_P(PSTR("\n\n"), false);
+//    switch (get_highest_layer(layer_state)) {
+//        case 0:
+//            oled_write_ln_P(PSTR("Qwrt"), false);
+//            break;
+//        case 1:
+//            oled_write_ln_P(PSTR("Clmk"), false);
+//            break;
+//        default:
+//            oled_write_P(PSTR("Mod\n"), false);
+//            break;
+//    }
+//    oled_write_P(PSTR("\n\n"), false);
     // Print current layer
-    oled_write_ln_P(PSTR("LAYER"), false);
+    //oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case 0:
-        case 1:
             oled_write_P(PSTR("Base\n"), false);
+            break;
+        case 1:
+            oled_write_P(PSTR("Lower"), false);
             break;
         case 2:
             oled_write_P(PSTR("Raise"), false);
             break;
         case 3:
-            oled_write_P(PSTR("Lower"), false);
+            oled_write_P(PSTR("Adj\n"), false);
             break;
         case 4:
-            oled_write_P(PSTR("Adj"), false);
-            break;
-        case 5:
             oled_write_P(PSTR("Extra"), false);
             break;
         default:
@@ -69,7 +68,11 @@ static void print_status_narrow(void) {
     }
     oled_write_P(PSTR("\n\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
+    oled_write_ln_P(PSTR("SCRLK"), led_usb_state.scroll_lock);
+    oled_write_P(PSTR("\n"), false);
     oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+    oled_write_P(PSTR("\n"), false);
+    oled_write_ln_P(PSTR("NUMLK"), led_usb_state.num_lock);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
