@@ -25,6 +25,8 @@ for more options.
 #undef MANUFACTURER
 #define MANUFACTURER "Martin Palecek"
 
+#define EE_HANDS
+
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 #if defined(KEYBOARD_sofle_rev1)
