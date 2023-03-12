@@ -21,6 +21,10 @@
 see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
 for more options.
 */
+
+#undef MANUFACTURER
+#define MANUFACTURER "Martin Palecek"
+
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 #if defined(KEYBOARD_sofle_rev1)
