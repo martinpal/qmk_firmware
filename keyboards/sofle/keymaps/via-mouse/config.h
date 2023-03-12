@@ -26,13 +26,18 @@ for more options.
 #define MANUFACTURER "Martin Palecek"
 
 #define EE_HANDS
-#define CAPS_LOCK_ENABLE 1
 #define SCROLL_LOCK_ENABLE 1
+#define CAPS_LOCK_ENABLE 1
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 #define RGBLIGHT_LAYERS
 //#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_MODS_ENABLE
+#define SPLIT_OLED_ENABLE
 
 #if defined(KEYBOARD_sofle_rev1)
 // Add RGB underglow and top facing lighting
@@ -46,7 +51,7 @@ for more options.
 #        define SPLIT_TRANSPORT_MIRROR
 #    else
 //#        define RGBLIGHT_EFFECT_BREATHING
-#        define RGBLIGHT_EFFECT_RAINBOW_MOOD
+//#        define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #        define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 //#        define RGBLIGHT_EFFECT_SNAKE
 //#        define RGBLIGHT_EFFECT_KNIGHT
