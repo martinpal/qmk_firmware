@@ -31,6 +31,9 @@ for more options.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
+#define RGBLIGHT_LAYERS
+//#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
+
 #if defined(KEYBOARD_sofle_rev1)
 // Add RGB underglow and top facing lighting
 #    define RGB_DI_PIN D3
