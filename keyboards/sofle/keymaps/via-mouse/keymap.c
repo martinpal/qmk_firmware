@@ -210,3 +210,42 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(6, layer_state_cmp(state, 4));
     return state;
 }
+
+__attribute__((weak)) bool peek_matrix(uint8_t row_index, uint8_t col_index, bool raw);
+
+uint8_t ledmap_left[MATRIX_ROWS][MATRIX_COLS] = {
+    { 10, 11, 20, 21, 30, 31 },
+    {  9, 12, 19, 22, 29, 32 },
+    {  8, 13, 18, 23, 28, 33 },
+    {  7, 14, 17, 24, 27, 34 },
+    {  6, 15, 16, 25, 26, 35 }
+};
+
+uint8_t ledmap_right[MATRIX_ROWS][MATRIX_COLS] = {
+    { 46, 47, 56, 57, 66, 67 },
+    { 45, 48, 55, 58, 65, 68 },
+    { 44, 49, 54, 59, 64, 69 },
+    { 43, 50, 53, 60, 63, 70 },
+    { 42, 51, 52, 61, 62, 71 }
+};
+
+void rgb_light_update_user() {
+    if (is_keyboard_left()) {
+        for (int c = 0; c < MATRIX_COLS; c++) {
+            for (int r = 0; r < MATRIX_ROWS; r++) {
+                if (peek_matrix(r, c, true)) {
+                    sethsv(HSV_WHITE, (LED_TYPE *)&led[ledmap_left[r][c]]);
+                }
+            }
+        }
+    } else {
+        for (int c = 0; c < MATRIX_COLS; c++) {
+            for (int r = 0; r < MATRIX_ROWS; r++) {
+                if (peek_matrix(r, c, true)) {
+                    sethsv(HSV_WHITE, (LED_TYPE *)&led[ledmap_right[r][c]]);
+                }
+            }
+        }
+    }
+    rgblight_set();
+}

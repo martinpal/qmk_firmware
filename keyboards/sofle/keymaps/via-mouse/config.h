@@ -31,6 +31,8 @@ for more options.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
+#define RGBLIGHT_SPLIT
+
 #define RGBLIGHT_LAYERS
 //#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF
 
@@ -38,6 +40,8 @@ for more options.
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_MODS_ENABLE
 #define SPLIT_OLED_ENABLE
+
+#define USER_LIGHT_UPDATE
 
 #if defined(KEYBOARD_sofle_rev1)
 // Add RGB underglow and top facing lighting

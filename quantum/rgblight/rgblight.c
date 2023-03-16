@@ -1157,6 +1157,10 @@ void rgblight_task(void) {
     rgblight_blink_layer_repeat_helper();
 #        endif
 
+#    ifdef USER_LIGHT_UPDATE
+    rgb_light_update_user();
+#    endif
+
     if (deferred_set_layer_state) {
         deferred_set_layer_state = false;
 

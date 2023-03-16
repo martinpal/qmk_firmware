@@ -227,6 +227,10 @@ void rgblight_unblink_layer(uint8_t layer);
 void rgblight_unblink_all_but_layer(uint8_t layer);
 #    endif
 
+#    ifdef USER_LIGHT_UPDATE
+void rgb_light_update_user(void);
+#    endif
+
 #endif
 
 extern LED_TYPE led[RGBLED_NUM];
