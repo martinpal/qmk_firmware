@@ -146,7 +146,7 @@ enum desktop_usages {
 #    define KEYBOARD_REPORT_SIZE 8
 #endif
 
-#define KEYBOARD_REPORT_KEYS 6
+#define KEYBOARD_REPORT_KEYS 10
 
 #ifdef __cplusplus
 extern "C" {

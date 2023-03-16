@@ -43,6 +43,9 @@ for more options.
 
 #define USER_LIGHT_UPDATE
 
+#undef RING_BUFFERED_6KRO_REPORT_ENABLE
+#define NKRO_ENABLE
+
 #if defined(KEYBOARD_sofle_rev1)
 // Add RGB underglow and top facing lighting
 #    define RGB_DI_PIN D3
