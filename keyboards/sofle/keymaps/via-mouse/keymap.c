@@ -121,9 +121,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 
+#ifdef TAP_DANCE_ENABLE
 tap_dance_action_t tap_dance_actions[] = {
 };
-
+#endif
 
 
 
