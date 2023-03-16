@@ -133,10 +133,10 @@ const rgblight_segment_t PROGMEM my_scrolllock_layer[] = RGBLIGHT_LAYER_SEGMENTS
     {32, 1, HSV_RED}
 );
 const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {33, 1, HSV_RED}
+    {33, 1, HSV_GREEN}
 );
 const rgblight_segment_t PROGMEM my_numlock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {34, 1, HSV_RED}
+    {34, 1, HSV_BLUE}
 );
 
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
