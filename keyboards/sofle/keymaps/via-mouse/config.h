@@ -73,3 +73,5 @@ for more options.
 #        define RGBLIGHT_VAL_STEP 5
 #    endif
 #endif
+
+#define GRAVE_ESC_CTRL_ANTIOVERRIDE
