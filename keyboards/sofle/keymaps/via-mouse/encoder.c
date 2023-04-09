@@ -21,17 +21,9 @@
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (clockwise) {
-            tap_code16(LSFT(KC_VOLU));
-        } else {
-            tap_code16(LSFT(KC_VOLD));
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_MS_WH_UP);
-        } else {
-            tap_code(KC_MS_WH_DOWN);
-        }
+        tap_code(clockwise ? KC_VOLU : KC_VOLD);
+    } else {
+        tap_code(clockwise ? KC_MS_WH_DOWN : KC_MS_WH_UP);
     }
     return true;
 }
