@@ -26,8 +26,11 @@ for more options.
 #define MANUFACTURER "Martin Palecek"
 
 #define EE_HANDS
+//#define LOCKING_SUPPORT_ENABLE 1
+//#define LOCKING_RESYNC_ENABLE 1
 #define SCROLL_LOCK_ENABLE 1
 #define CAPS_LOCK_ENABLE 1
+#define EXTRAKEY_ENABLE 1
 
 #define ENCODER_ENABLE 1
 #define ENCODER_DIRECTION_FLIP 1
