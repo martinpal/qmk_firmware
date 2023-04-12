@@ -42,9 +42,12 @@ bool process_grave_esc(uint16_t keycode, keyrecord_t *record) {
 #endif
 
 #ifdef GRAVE_ESC_CTRL_ANTIOVERRIDE
-        // if CTRL is pressed, tilde is always sent
-        // this is handy for Linux and Mac where Win + tilde is mapped to window manager actions
-        if (mods & MOD_MASK_CTRL) {
+        if (mods & MOD_MASK_CTRL && mods & MOD_MASK_SHIFT) {
+            // if CTRL and SHIFT are pressed, ESC is always sent --> Ctrl+Shift+Esc e.g. for task manager
+            shifted = 0;
+        } else if (mods & MOD_MASK_CTRL) {
+            // if CTRL is pressed, tilde is always sent
+            // this is handy for Linux and Mac where Win + tilde is mapped to window manager actions
             shifted = 1;
             unregister_mods(MOD_BIT(KC_LCTL));
         }
