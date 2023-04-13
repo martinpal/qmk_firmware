@@ -21,6 +21,9 @@
 static bool grave_esc_was_shifted = false;
 
 bool process_grave_esc(uint16_t keycode, keyrecord_t *record) {
+#ifdef GRAVE_ESC_CTRL_ANTIOVERRIDE
+    bool lctl_unregistered = false;
+#endif
     if (keycode == QK_GRAVE_ESCAPE) {
         const uint8_t mods    = get_mods();
         uint8_t       shifted = mods & MOD_MASK_SG;
@@ -49,6 +52,7 @@ bool process_grave_esc(uint16_t keycode, keyrecord_t *record) {
             // if CTRL is pressed, tilde is always sent
             // this is handy for Linux and Mac where Win + tilde is mapped to window manager actions
             shifted = 1;
+            lctl_unregistered = true;
             unregister_mods(MOD_BIT(KC_LCTL));
         }
 #endif
@@ -75,6 +79,11 @@ bool process_grave_esc(uint16_t keycode, keyrecord_t *record) {
         }
 
         send_keyboard_report();
+#ifdef GRAVE_ESC_CTRL_ANTIOVERRIDE
+        if (lctl_unregistered) {
+            register_mods(MOD_BIT(KC_LCTL));
+        }
+#endif
         return false;
     }
 
