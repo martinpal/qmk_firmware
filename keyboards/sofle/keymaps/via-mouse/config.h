@@ -39,6 +39,7 @@ for more options.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
+#define RGB_DISABLE_OVERRIDE
 #define RGBLIGHT_SPLIT
 
 #define RGBLIGHT_LAYERS

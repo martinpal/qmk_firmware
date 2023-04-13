@@ -374,12 +374,26 @@ void rgblight_mode_noeeprom(uint8_t mode) {
 }
 
 void rgblight_toggle(void) {
+#ifdef RGB_DISABLE_OVERRIDE
+    static uint8_t old_val = -1;
+    if (old_val == -1) old_val = rgblight_config.val;
+    if (rgblight_config.val > 0) {
+        old_val             = rgblight_config.val;
+        rgblight_config.val = 0;
+    } else {
+        rgblight_config.val = old_val;
+        old_val             = 0;
+    }
+    rgblight_sethsv_eeprom_helper(rgblight_config.hue, rgblight_config.sat, rgblight_config.val, false);
+    RGBLIGHT_SPLIT_SET_CHANGE_HSVS;
+#else
     dprintf("rgblight toggle [EEPROM]: rgblight_config.enable = %u\n", !rgblight_config.enable);
     if (rgblight_config.enable) {
         rgblight_disable();
     } else {
         rgblight_enable();
     }
+#endif
 }
 
 void rgblight_toggle_noeeprom(void) {
