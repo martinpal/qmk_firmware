@@ -114,9 +114,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------------.                    ,-----------------------------------------.
  * | F13  | F14  | F15  | F16  | F17  | F18  |                    | F19  | F20  | F21  | F22  | F23  | F24  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    | WH U | BTN1 |  UP  | BTN2 | BTN3 |      |
+ * | BLDR |      |      |      |      |      |                    | WH U | BTN1 |  UP  | BTN2 | BTN3 |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------| WH D | LEFT | DOWN | RGHT | BTN4 |      |
+ * | RBT  |      |      |      |      |      |-------.    ,-------| WH D | LEFT | DOWN | RGHT | BTN4 |      |
  * |------+------+------+------+------+------|        |   |       |------+------+------+------+------+------|
  * |      |      |      |      |      |      |--------|   |-------|      | WH L |      | WH R | BTN5 |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -126,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [4] = LAYOUT(
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                           KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
-     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3,   KC_NO,
-     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN4,   KC_NO,
+   QK_BOOT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3,   KC_NO,
+    QK_RBT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN4,   KC_NO,
      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,          KC_NO,   KC_NO, KC_WH_L,   KC_NO, KC_WH_R, KC_BTN5,   KC_NO,
                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,LSFT_T(KC_ENT),                 KC_SPC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 )
