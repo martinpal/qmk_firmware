@@ -73,7 +73,11 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n"), false);
     oled_write_ln_P(PSTR("NUMLK"), led_usb_state.num_lock);
     oled_write_P(PSTR("\n"), false);
-    render_logo();
+    if (is_keyboard_master()) {
+      oled_write_P(PSTR("DON'TPANIC"), false);
+    } else {
+      render_logo();
+    }
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
