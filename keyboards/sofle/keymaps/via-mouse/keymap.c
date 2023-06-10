@@ -243,12 +243,34 @@ uint8_t ledmap_right[MATRIX_ROWS][MATRIX_COLS] = {
     { 42, 51, 52, 61, 62, 71 }
 };
 
+typedef struct {
+    uint8_t h;
+    uint8_t s;
+    uint8_t v;
+} rgb_t;
+
+rgb_t colors_left[MATRIX_ROWS][MATRIX_COLS] = {
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_YELLOW   } , {HSV_BLUE     } , {HSV_RED      } , {HSV_GREEN    } , {HSV_RED      }, {HSV_WHITE    } }
+};
+
+rgb_t colors_right[MATRIX_ROWS][MATRIX_COLS] = {
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_WHITE    } , {HSV_CYAN     } , {HSV_PURPLE   } , {HSV_ORANGE   } , {HSV_BLUE     }, {HSV_WHITE    } }
+};
+
 void rgb_light_update_user() {
     if (is_keyboard_left()) {
         for (int c = 0; c < MATRIX_COLS; c++) {
             for (int r = 0; r < MATRIX_ROWS; r++) {
                 if (peek_matrix(r, c, true)) {
-                    sethsv(HSV_WHITE, (LED_TYPE *)&led[ledmap_left[r][c]]);
+                    sethsv(colors_left[r][c].h, colors_left[r][c].s, colors_left[r][c].v, (LED_TYPE *)&led[ledmap_left[r][c]]);
                 }
             }
         }
@@ -256,7 +278,7 @@ void rgb_light_update_user() {
         for (int c = 0; c < MATRIX_COLS; c++) {
             for (int r = 0; r < MATRIX_ROWS; r++) {
                 if (peek_matrix(r, c, true)) {
-                    sethsv(HSV_WHITE, (LED_TYPE *)&led[ledmap_right[r][c]]);
+                    sethsv(colors_right[r][c].h, colors_right[r][c].s, colors_right[r][c].v, (LED_TYPE *)&led[ledmap_right[r][c]]);
                 }
             }
         }
