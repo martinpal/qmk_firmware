@@ -23,7 +23,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * BASE - QWERTY
+ * BASE - WHITE (QWERTY with home row mods)
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -41,9 +41,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT(
    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
    QK_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
+KC_TAB,LGUI_T(KC_A),LCTL_T(KC_S),LALT_T(KC_D),LSFT_T(KC_F),KC_G,      KC_H,RSFT_T(KC_J),RALT_T(KC_K),RCTL_T(KC_L),KC_SCLN,  KC_QUOT,
+   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MPLY,     KC_NO, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
+        KC_LGUI,LALT_T(KC_LBRC),KC_LCTL, MO(2),LSFT_T(KC_ENT),          KC_SPC,MO(3), KC_RCTL,RALT_T(KC_RBRC), KC_APP
+),
+/* GAME - CYAN (QWERTY)
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | GESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  \   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * | TAB  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+ * |------+------+------+------+------+------| Play  |    |       |------+------+------+------+------+------|
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            | LGUI | LAlt | LCTR |MO(1) | /Enter  /       \Space \  |MO(2) | RCTR | RAlt | RGUI |
+ *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+[1] = LAYOUT(
+   KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
+   QK_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
     KC_TAB,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
    KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MPLY,     KC_NO, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
-        KC_LGUI,LALT_T(KC_LBRC),KC_LCTL, MO(1),LSFT_T(KC_ENT),          KC_SPC,MO(2), KC_RCTL,RALT_T(KC_RBRC), KC_APP
+        KC_LGUI,LALT_T(KC_LBRC),KC_LCTL, MO(2),LSFT_T(KC_ENT),          KC_SPC,MO(3), KC_RCTL,RALT_T(KC_RBRC), KC_APP
 ),
 /*
  * LOWER - RED
@@ -61,12 +82,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `-----------------------------------'           '------''---------------------------'
  */
 
-[1] = LAYOUT(
+[2] = LAYOUT(
     KC_GRV, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
    QK_GESC, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     KC_TAB,  KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_F12,
    SC_LSPO,KC_EQL,KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, KC_MUTE,     KC_NO, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, SC_RSPC,
-                KC_RGUI,KC_LALT,KC_LCTL,KC_TRNS,LSFT_T(KC_SPC),          KC_SPC,MO(4), KC_RCTL, KC_RALT, KC_APP
+                KC_RGUI,KC_LALT,KC_LCTL,KC_TRNS,LSFT_T(KC_SPC),          KC_SPC,MO(5), KC_RCTL, KC_RALT, KC_APP
 ),
 /* RAISE - BLUE
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -82,12 +103,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[2] = LAYOUT(
+[3] = LAYOUT(
     KC_GRV,  KC_F1,  KC_F2,  KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     KC_ESC, KC_INS,KC_PSCR,  KC_NO,   KC_NO, KC_SCRL,                      KC_PGUP,C(KC_LEFT), KC_UP,C(KC_RGHT), KC_NO,  KC_F12,
     KC_TAB,  KC_NO,  KC_NO,  KC_NO,   KC_NO, KC_CAPS,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
    SC_LSPO,KC_UNDO, KC_CUT,KC_COPY,KC_PASTE,  KC_NUM, KC_MUTE,      KC_NO,   KC_NO, KC_HOME,   KC_NO,  KC_END,   KC_NO, SC_RSPC,
-                KC_TRNS, KC_TRNS, KC_TRNS,   MO(3),LSFT_T(KC_ENT),          KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+                KC_TRNS, KC_TRNS, KC_TRNS,   MO(4),LSFT_T(KC_ENT),          KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 /* ADJUST - GREEN
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -103,14 +124,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[3] = LAYOUT(
+[4] = LAYOUT(
       MC_0,    MC_1,    MC_2,    MC_3,     MC_4,    MC_5,                            MC_6,    MC_7,    MC_8,    MC_9,   MC_10,   MC_11,
   RGB_RMOD,   KC_NO, KC_PSCR,   KC_NO,    KC_NO,   KC_NO,                           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   MC_12,
    RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI,    KC_NO,   KC_NO,                           KC_NO, KC_VOLD, KC_MUTE, KC_VOLU,   KC_NO,   MC_13,
    RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD,  KC_CALC,   KC_NO,   KC_NO,         KC_NO,   KC_NO, KC_MPRV, KC_MPLY, KC_MNXT,   MC_15,   MC_14,
                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LSFT_T(KC_ENT),                KC_SPC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
-/* EXTRA - YELLOW
+/* MOUSE - YELLOW
  * ,----------------------------------------.                    ,-----------------------------------------.
  * | F13  | F14  | F15  | F16  | F17  | F18  |                    | F19  | F20  | F21  | F22  | F23  | F24  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -124,12 +145,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
-[4] = LAYOUT(
+[5] = LAYOUT(
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                           KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
    QK_BOOT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3,   KC_NO,
     QK_RBT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN4,   KC_NO,
-     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,          KC_NO,   KC_NO, KC_WH_L,   KC_NO, KC_WH_R, KC_BTN5,   KC_NO,
+     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   DF(0),   KC_NO,          KC_NO,   DF(1), KC_WH_L,   KC_NO, KC_WH_R, KC_BTN5,   KC_NO,
                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,LSFT_T(KC_ENT),                 KC_SPC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+),
+/* EXTRA - MAGENTA
+ * ,----------------------------------------.                    ,-----------------------------------------.
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------.    ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|        |   |       |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |--------|   |-------|      |      |      |      |      |      |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            |      |      |      |      | /       /       \      \  |      |      |      |      |
+ *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+[6] = LAYOUT(
+     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                  KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,                         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
 )
 };
 
@@ -153,6 +195,15 @@ const rgblight_segment_t PROGMEM my_numlock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    { 0, 7, HSV_CYAN},
+    {15, 2, HSV_CYAN},
+    {25, 2, HSV_CYAN},
+    {36, 7, HSV_CYAN},
+    {51, 2, HSV_CYAN},
+    {61, 2, HSV_CYAN}
+);
+
+const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     { 0, 7, HSV_RED},
     {15, 2, HSV_RED},
     {25, 2, HSV_RED},
@@ -161,7 +212,7 @@ const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {61, 2, HSV_RED}
 );
 
-const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     { 0, 7, HSV_BLUE},
     {15, 2, HSV_BLUE},
     {25, 2, HSV_BLUE},
@@ -170,7 +221,7 @@ const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {61, 2, HSV_BLUE}
 );
 
-const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM my_layer4_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     { 0, 7, HSV_GREEN},
     {15, 2, HSV_GREEN},
     {25, 2, HSV_GREEN},
@@ -179,13 +230,22 @@ const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {61, 2, HSV_GREEN}
 );
 
-const rgblight_segment_t PROGMEM my_layer4_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    { 0, 7, HSV_YELLOW},
-    {15, 2, HSV_YELLOW},
-    {25, 2, HSV_YELLOW},
-    {36, 7, HSV_YELLOW},
-    {51, 2, HSV_YELLOW},
-    {61, 2, HSV_YELLOW}
+const rgblight_segment_t PROGMEM my_layer5_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    { 0, 7, HSV_ORANGE},
+    {15, 2, HSV_ORANGE},
+    {25, 2, HSV_ORANGE},
+    {36, 7, HSV_ORANGE},
+    {51, 2, HSV_ORANGE},
+    {61, 2, HSV_ORANGE}
+);
+
+const rgblight_segment_t PROGMEM my_layer6_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    { 0, 7, HSV_MAGENTA},
+    {15, 2, HSV_MAGENTA},
+    {25, 2, HSV_MAGENTA},
+    {36, 7, HSV_MAGENTA},
+    {51, 2, HSV_MAGENTA},
+    {61, 2, HSV_MAGENTA}
 );
 
 // Now define the array of layers. Later layers take precedence
@@ -196,7 +256,9 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     my_layer1_layer,
     my_layer2_layer,
     my_layer3_layer,
-    my_layer4_layer
+    my_layer4_layer,
+    my_layer5_layer,
+    my_layer6_layer
 );
 
 void keyboard_post_init_user(void) {
@@ -222,6 +284,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(4, layer_state_cmp(state, 2));
     rgblight_set_layer_state(5, layer_state_cmp(state, 3));
     rgblight_set_layer_state(6, layer_state_cmp(state, 4));
+    rgblight_set_layer_state(7, layer_state_cmp(state, 5));
+    rgblight_set_layer_state(8, layer_state_cmp(state, 6));
     return state;
 }
 
@@ -251,8 +315,8 @@ typedef struct {
 
 rgb_t colors_left[MATRIX_ROWS][MATRIX_COLS] = {
   { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
-  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
-  { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_RED      } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
+  { {HSV_RED      } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
   { {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    } , {HSV_WHITE    }, {HSV_WHITE    } },
   { {HSV_YELLOW   } , {HSV_BLUE     } , {HSV_RED      } , {HSV_GREEN    } , {HSV_RED      }, {HSV_WHITE    } }
 };
