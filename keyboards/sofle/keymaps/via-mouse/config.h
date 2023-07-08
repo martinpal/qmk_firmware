@@ -25,6 +25,8 @@ for more options.
 #undef MANUFACTURER
 #define MANUFACTURER "Martin Palecek"
 
+#undef NO_RESET
+
 #define EE_HANDS
 //#define LOCKING_SUPPORT_ENABLE 1
 //#define LOCKING_RESYNC_ENABLE 1

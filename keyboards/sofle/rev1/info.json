@@ -24,7 +24,7 @@
         }
     },
     "processor": "atmega32u4",
-    "bootloader": "caterina",
+    "bootloader": "rp2040",
     "layouts": {
         "LAYOUT": {
             "layout": [
