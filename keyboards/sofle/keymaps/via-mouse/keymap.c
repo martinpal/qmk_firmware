@@ -29,9 +29,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | GESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  \   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+ * | TAB  | m A  | m S  | m D  | m F  |   G  |-------.    ,-------|   H  | m J  | m K  | m L  |   ;  |  '   |
  * |------+------+------+------+------+------| Play  |    |       |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+ * |LShift| m Z  | m X  | m C  | m V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LGUI | LAlt | LCTR |MO(1) | /Enter  /       \Space \  |MO(2) | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
    QK_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
 KC_TAB,LGUI_T(KC_A),LCTL_T(KC_S),LALT_T(KC_D),LSFT_T(KC_F),KC_G,     KC_H,RSFT_T(KC_J),RALT_T(KC_K),RCTL_T(KC_L),KC_SCLN,KC_QUOT,
-   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MPLY,     KC_NO, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
+KC_LSFT,LGUI_T(KC_Z),LCTL_T(KC_X),LALT_T(KC_C),LSFT_T(KC_V),KC_B,KC_MPLY,     KC_NO, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
         KC_LGUI,LALT_T(KC_LBRC),KC_LCTL, MO(2),LSFT_T(KC_ENT),          KC_SPC,MO(3), KC_RCTL,RALT_T(KC_RBRC), KC_APP
 ),
 /* GAME - CYAN (QWERTY)
@@ -73,9 +73,9 @@ KC_TAB,LGUI_T(KC_A),LCTL_T(KC_S),LALT_T(KC_D),LSFT_T(KC_F),KC_G,     KC_H,RSFT_T
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | GESC |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |   1  |   2  |   3  |   4  |   5  |-------.    ,-------|   6  |   7  |   8  |   9  |   0  | F12  |
+ * | TAB  | m 1  | m 2  | m 3  | m 4  |   5  |-------.    ,-------|   6  | m 7  | m 8  | m 9  |   0  | F12  |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * | LS(  |   =  |   -  |   +  |   {  |   }  |-------|    |-------|   [  |   ]  |   ;  |   :  |   \  | RS)  |
+ * | LS(  | m =  | m -  | m +  | m [  |   ]  |-------|    |-------|   [  |   ]  |   ;  |   :  |   \  | RS)  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | RGUI | TRNS | TRNS | TRNS | /Space  /       \ TRNS \  |MO(4) | TRNS | TRNS | TRNS |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -86,7 +86,7 @@ KC_TAB,LGUI_T(KC_A),LCTL_T(KC_S),LALT_T(KC_D),LSFT_T(KC_F),KC_G,     KC_H,RSFT_T
     KC_GRV, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     KC_GRV, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
 KC_TAB,LGUI_T(KC_1),LCTL_T(KC_2),LALT_T(KC_3),LSFT_T(KC_4),KC_5,       KC_6,RSFT_T(KC_7),RALT_T(KC_8),RCTL_T(KC_9),KC_0,KC_F12,
-   SC_LSPO,KC_EQL,KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, KC_MUTE,     KC_NO, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, SC_RSPC,
+SC_LSPO,LGUI_T(KC_EQL),LCTL_T(KC_MINS),LALT_T(KC_PLUS),LSFT_T(KC_LBRC),KC_RBRC, KC_MUTE,     KC_NO, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, SC_RSPC,
                 KC_RGUI,KC_LALT,KC_LCTL,KC_TRNS,LSFT_T(KC_SPC),          KC_SPC,MO(5), KC_RCTL, KC_RALT, KC_APP
 ),
 /* RAISE - BLUE
@@ -95,7 +95,7 @@ KC_TAB,LGUI_T(KC_1),LCTL_T(KC_2),LALT_T(KC_3),LSFT_T(KC_4),KC_5,       KC_6,RSFT
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | ESC  | INS  | PRNT |      |      | SCRL |                    |  PGUP| CLFT |  UP  | CRGT |      | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |      |      |      |      | CAPS |-------.    ,-------|  PGDN| LEFT | DOWN | RGHT | DEL  | Bspc |
+ * | TAB  | LGUI | LCTR | LAlt | LSft | CAPS |-------.    ,-------|  PGDN| LEFT | DOWN | RGHT | DEL  | Bspc |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * | LS(  | UNDO | CUT  | COPY | PASTE| NLCK |-------|    |-------|      | HOME |      |  END |      | RS)  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -106,8 +106,8 @@ KC_TAB,LGUI_T(KC_1),LCTL_T(KC_2),LALT_T(KC_3),LSFT_T(KC_4),KC_5,       KC_6,RSFT
 [3] = LAYOUT(
     KC_GRV,  KC_F1,  KC_F2,  KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
     KC_ESC, KC_INS,KC_PSCR,  KC_NO,   KC_NO, KC_SCRL,                      KC_PGUP,C(KC_LEFT), KC_UP,C(KC_RGHT), KC_NO,  KC_F12,
-    KC_TAB,  KC_NO,  KC_NO,  KC_NO,   KC_NO, KC_CAPS,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
-   SC_LSPO,KC_UNDO, KC_CUT,KC_COPY,KC_PASTE,  KC_NUM, KC_MUTE,      KC_NO,   KC_NO, KC_HOME,   KC_NO,  KC_END,   KC_NO, SC_RSPC,
+    KC_TAB,KC_LGUI,KC_LCTL,KC_LALT, KC_LSFT, KC_CAPS,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
+SC_LSPO,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),KC_NUM,KC_MUTE,    KC_NO,KC_NO, KC_HOME,   KC_NO,  KC_END,   KC_NO, SC_RSPC,
                 KC_TRNS, KC_TRNS, KC_TRNS,   MO(4),LSFT_T(KC_ENT),          KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 /* ADJUST - GREEN
@@ -171,7 +171,7 @@ QK_CLEAR_EEPROM,KC_NO, KC_NO,   KC_NO,   KC_NO,   DF(0),   KC_NO,          KC_NO
      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                  KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,                         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+                       KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,            KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO
 )
 };
 
