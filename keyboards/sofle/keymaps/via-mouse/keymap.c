@@ -93,9 +93,9 @@ SC_LSPO,LGUI_T(KC_EQL),LCTL_T(KC_MINS),LALT_T(KC_PLUS),LSFT_T(KC_LBRC),KC_RBRC, 
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ESC  | INS  | PRNT |      |      | SCRL |                    |  PGUP| CLFT |  UP  | CRGT |      | F12  |
+ * | ESC  | INS  | PRNT |      | C(R) | SCRL |                    |  PGUP| CLFT |  UP  | CRGT |      | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  | LGUI | LCTR | LAlt | LSft | CAPS |-------.    ,-------|  PGDN| LEFT | DOWN | RGHT | DEL  | Bspc |
+ * | TAB  | C(A) | LCTR | LAlt | LSft | CAPS |-------.    ,-------|  PGDN| LEFT | DOWN | RGHT | DEL  | Bspc |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * | LS(  | UNDO | CUT  | COPY | PASTE| NLCK |-------|    |-------|      | HOME |      |  END |      | RS)  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -105,8 +105,8 @@ SC_LSPO,LGUI_T(KC_EQL),LCTL_T(KC_MINS),LALT_T(KC_PLUS),LSFT_T(KC_LBRC),KC_RBRC, 
  */
 [3] = LAYOUT(
     KC_GRV,  KC_F1,  KC_F2,  KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
-    KC_ESC, KC_INS,KC_PSCR,  KC_NO,   KC_NO, KC_SCRL,                      KC_PGUP,C(KC_LEFT), KC_UP,C(KC_RGHT), KC_NO,  KC_F12,
-    KC_TAB,KC_LGUI,KC_LCTL,KC_LALT, KC_LSFT, KC_CAPS,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
+  KC_ESC, KC_INS,KC_PSCR,  KC_NO,LCTL(KC_R), KC_SCRL,                      KC_PGUP,C(KC_LEFT), KC_UP,C(KC_RGHT), KC_NO,  KC_F12,
+ KC_TAB,LCTL(KC_A),KC_LCTL,KC_LALT, KC_LSFT, KC_CAPS,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
 SC_LSPO,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),KC_NUM,KC_MUTE,    KC_NO,KC_NO, KC_HOME,   KC_NO,  KC_END,   KC_NO, SC_RSPC,
                 KC_TRNS, KC_TRNS, KC_TRNS,   MO(4),LSFT_T(KC_ENT),          KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
