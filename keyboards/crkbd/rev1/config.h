@@ -37,3 +37,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define DIODE_DIRECTION COL2ROW
+
+#undef MANUFACTURER
+#define MANUFACTURER "Martin Palecek"
+
+#undef NO_RESET
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 7
+
+#ifdef TAPPING_TERM
+#undef TAPPING_TERM
+#endif
+
+#define TAPPING_TERM 220
+#define QUICK_TAP_TERM 60
+#define PERMISSIVE_HOLD
+#undef HOLD_ON_OTHER_KEY_PRESS
+#define IGNORE_MOD_TAP_INTERRUPT
+
+#define TAP_CODE_DELAY 0
+
+#define RGB_DISABLE_OVERRIDE
+#define RGBLIGHT_SPLIT
+#define RGBLIGHT_LAYERS
+
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_MODS_ENABLE
+#define SPLIT_OLED_ENABLE
+
+#define USER_LIGHT_UPDATE
+
+#undef RING_BUFFERED_6KRO_REPORT_ENABLE
+//#define NKRO_ENABLE
+
+#define EE_HANDS
