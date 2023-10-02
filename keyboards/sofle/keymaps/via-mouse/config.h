@@ -17,6 +17,9 @@
 
 #pragma once
 
+// Sofle choc has no underglow, this define is needed to adjust the LED numbers
+#define SOFLE_CHOC
+
 /* The way how "handedness" is decided (which half is which),
 see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
 for more options.
@@ -60,9 +63,15 @@ for more options.
 #if defined(KEYBOARD_sofle_rev1)
 // Add RGB underglow and top facing lighting
 #    define RGB_DI_PIN D3
+#ifdef SOFLE_CHOC
+#    define RGBLED_NUM 58
+#    define RGBLED_SPLIT \
+        { 29, 29 }
+#else
 #    define RGBLED_NUM 72
 #    define RGBLED_SPLIT \
         { 36, 36 }
+#endif
 #    ifdef RGB_MATRIX_ENABLE
 #        define RGB_MATRIX_LED_COUNT RGBLED_NUM
 #        define RGB_MATRIX_SPLIT RGBLED_SPLIT

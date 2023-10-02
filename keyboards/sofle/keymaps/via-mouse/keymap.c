@@ -185,67 +185,121 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 const rgblight_segment_t PROGMEM my_scrolllock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 1, 1, HSV_RED}
+#else
     {32, 1, HSV_RED}
+#endif
 );
 const rgblight_segment_t PROGMEM my_capslock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 2, 1, HSV_GREEN}
+#else
     {33, 1, HSV_GREEN}
+#endif
 );
 const rgblight_segment_t PROGMEM my_numlock_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 3, 1, HSV_BLUE}
+#else
     {34, 1, HSV_BLUE}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_CYAN},
+    {15, 2, HSV_CYAN},
+    {29, 7, HSV_CYAN},
+    {44, 2, HSV_CYAN}
+#else
     { 0, 7, HSV_CYAN},
     {15, 2, HSV_CYAN},
     {25, 2, HSV_CYAN},
     {36, 7, HSV_CYAN},
     {51, 2, HSV_CYAN},
     {61, 2, HSV_CYAN}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_RED},
+    {15, 2, HSV_RED},
+    {29, 7, HSV_RED},
+    {44, 2, HSV_RED}
+#else
     { 0, 7, HSV_RED},
     {15, 2, HSV_RED},
     {25, 2, HSV_RED},
     {36, 7, HSV_RED},
     {51, 2, HSV_RED},
     {61, 2, HSV_RED}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_BLUE},
+    {15, 2, HSV_BLUE},
+    {29, 7, HSV_BLUE},
+    {44, 2, HSV_BLUE}
+#else
     { 0, 7, HSV_BLUE},
     {15, 2, HSV_BLUE},
     {25, 2, HSV_BLUE},
     {36, 7, HSV_BLUE},
     {51, 2, HSV_BLUE},
     {61, 2, HSV_BLUE}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer4_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_GREEN},
+    {15, 2, HSV_GREEN},
+    {29, 7, HSV_GREEN},
+    {44, 2, HSV_GREEN}
+#else
     { 0, 7, HSV_GREEN},
     {15, 2, HSV_GREEN},
     {25, 2, HSV_GREEN},
     {36, 7, HSV_GREEN},
     {51, 2, HSV_GREEN},
     {61, 2, HSV_GREEN}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer5_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_ORANGE},
+    {15, 2, HSV_ORANGE},
+    {29, 7, HSV_ORANGE},
+    {44, 2, HSV_ORANGE}
+#else
     { 0, 7, HSV_ORANGE},
     {15, 2, HSV_ORANGE},
     {25, 2, HSV_ORANGE},
     {36, 7, HSV_ORANGE},
     {51, 2, HSV_ORANGE},
     {61, 2, HSV_ORANGE}
+#endif
 );
 
 const rgblight_segment_t PROGMEM my_layer6_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+#ifdef SOFLE_CHOC
+    { 0, 7, HSV_MAGENTA},
+    {15, 2, HSV_MAGENTA},
+    {29, 7, HSV_MAGENTA},
+    {44, 2, HSV_MAGENTA}
+#else
     { 0, 7, HSV_MAGENTA},
     {15, 2, HSV_MAGENTA},
     {25, 2, HSV_MAGENTA},
     {36, 7, HSV_MAGENTA},
     {51, 2, HSV_MAGENTA},
     {61, 2, HSV_MAGENTA}
+#endif
 );
 
 // Now define the array of layers. Later layers take precedence
@@ -292,19 +346,35 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 __attribute__((weak)) bool peek_matrix(uint8_t row_index, uint8_t col_index, bool raw);
 
 uint8_t ledmap_left[MATRIX_ROWS][MATRIX_COLS] = {
+#ifdef SOFLE_CHOC
+    { 28, 21, 20, 11, 10,  0 },
+    { 27, 22, 19, 12,  9,  1 },
+    { 26, 23, 18, 13,  8,  2 },
+    { 25, 24, 17, 14,  7,  3 },
+    { 16, 15,  6,  5,  4,  0 }
+#else
     { 10, 11, 20, 21, 30, 31 },
     {  9, 12, 19, 22, 29, 32 },
     {  8, 13, 18, 23, 28, 33 },
     {  7, 14, 17, 24, 27, 34 },
     {  6, 15, 16, 25, 26, 35 }
+#endif
 };
 
 uint8_t ledmap_right[MATRIX_ROWS][MATRIX_COLS] = {
+#ifdef SOFLE_CHOC
+    { 57, 50, 49, 40, 39, 29 },
+    { 56, 51, 48, 41, 38, 30 },
+    { 55, 52, 47, 42, 37, 31 },
+    { 54, 53, 46, 43, 36, 32 },
+    { 45, 44, 35, 34, 33, 29 }
+#else
     { 46, 47, 56, 57, 66, 67 },
     { 45, 48, 55, 58, 65, 68 },
     { 44, 49, 54, 59, 64, 69 },
     { 43, 50, 53, 60, 63, 70 },
     { 42, 51, 52, 61, 62, 71 }
+#endif
 };
 
 typedef struct {
