@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | GESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  \   |
+ * | GESC | m Q  | m W  | m E  | m R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  \   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | TAB  | m A  | m S  | m D  | m F  |   G  |-------.    ,-------|   H  | m J  | m K  | m L  |   ;  |  '   |
  * |------+------+------+------+------+------| Play  |    |       |------+------+------+------+------+------|
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [0] = LAYOUT(
    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSPC,
-   QK_GESC,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
+QK_GESC,LGUI_T(KC_Q),LSFT_T(KC_W),LCTL_T(KC_E),LALT_T(KC_R),KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS,
 KC_TAB,LGUI_T(KC_A),LCTL_T(KC_S),LALT_T(KC_D),LSFT_T(KC_F),KC_G,     KC_H,RSFT_T(KC_J),RALT_T(KC_K),RCTL_T(KC_L),KC_SCLN,KC_QUOT,
 KC_LSFT,LGUI_T(KC_Z),LALT_T(KC_X),LSFT_T(KC_C),LCTL_T(KC_V),KC_B,KC_MPLY,     KC_NO, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
         KC_LGUI,LALT_T(KC_LBRC),KC_LCTL, MO(2),LSFT_T(KC_ENT),          KC_SPC,MO(3), KC_RCTL,RALT_T(KC_RBRC), KC_APP
@@ -71,7 +71,7 @@ KC_LSFT,LGUI_T(KC_Z),LALT_T(KC_X),LSFT_T(KC_C),LCTL_T(KC_V),KC_B,KC_MPLY,     KC
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | GESC |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
+ * | GESC | mF1  | mF2  | mF3  | mF4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | TAB  | m 1  | m 2  | m 3  | m 4  |   5  |-------.    ,-------|   6  | m 7  | m 8  | m 9  |   0  | F12  |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
@@ -84,7 +84,7 @@ KC_LSFT,LGUI_T(KC_Z),LALT_T(KC_X),LSFT_T(KC_C),LCTL_T(KC_V),KC_B,KC_MPLY,     KC
 
 [2] = LAYOUT(
     KC_GRV, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
-    KC_GRV, KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+KC_GRV,LGUI_T(KC_F1),LSFT_T(KC_F2),LCTL_T(KC_F3),LALT_T(KC_F4),KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
 KC_TAB,LGUI_T(KC_1),LCTL_T(KC_2),LALT_T(KC_3),LSFT_T(KC_4),KC_5,       KC_6,RSFT_T(KC_7),RALT_T(KC_8),RCTL_T(KC_9),KC_0,KC_F12,
 SC_LSPO,LGUI_T(KC_EQL),LALT_T(KC_MINS),LSFT_T(KC_PLUS),LCTL_T(KC_LBRC),KC_RBRC, KC_MUTE,     KC_NO, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, SC_RSPC,
                 KC_RGUI,KC_LALT,KC_LCTL,KC_TRNS,LSFT_T(KC_SPC),          KC_SPC,MO(5), KC_RCTL, KC_RALT, KC_APP
@@ -147,9 +147,9 @@ SC_LSPO,LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V),KC_NUM,KC_MUTE,    KC_NO,KC_
  */
 [5] = LAYOUT(
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                           KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
-   QK_BOOT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3,   KC_NO,
-    QK_RBT,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                          KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN4,   KC_NO,
-QK_CLEAR_EEPROM,KC_NO, KC_NO,   KC_NO,   KC_NO,   DF(0),   KC_NO,          KC_NO,   DF(1), KC_WH_L,   KC_NO, KC_WH_R, KC_BTN5,   KC_NO,
+   QK_BOOT,    MC_1,    MC_2,    MC_3,    MC_4,    MC_5,                          KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3,   KC_NO,
+    QK_RBT,    MC_6,    MC_7,    MC_8,    MC_9,   MC_10,                          KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN4,   KC_NO,
+QK_CLEAR_EEPROM,MC_11, MC_12,   MC_13,   MC_14,   DF(0),   KC_NO,          KC_NO,   DF(1), KC_WH_L,   KC_NO, KC_WH_R, KC_BTN5,   KC_NO,
                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,LSFT_T(KC_ENT),                 KC_SPC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 /* EXTRA - MAGENTA
